@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Color Changer Webpage</title>
+    <style>
+        /* Center everything on the screen */
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f0f1f5ff;
+            transition: background-color 0.4s ease; /* Makes color change smooth */
+        }
+
+        h1 {
+            color: #333;
+            margin-bottom: 20px;
+        }
+
+        /* Style the button */
+        .color-btn {
+            padding: 12px 24px;
+            font-size: 16px;
+            font-weight: bold;
+            color: white;
+            background-color: #007bff;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Add a subtle hover effect */
+        .color-btn:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Webpage Title -->
+    <h1>Magic Color Changer</h1>
+
+    <!-- Action Button -->
+    <button class="color-btn" onclick="changeBackgroundColor()">Change Background</button>
+
+    <script>
+        function changeBackgroundColor() {
+            // Generate a random hex color code
+            const randomColor = '#' + Math.floor(Math.random() * 16777215).toString(16).padStart(6, '0');
+            
+            // Apply the color to the page background
+            document.body.style.backgroundColor = randomColor;
+        }
+    </script>
+
+</body>
+</html>
